@@ -1,0 +1,8 @@
+{
+  "prompt": "a lighthouse on a rocky coast at dawn, oil painting",
+  "negative_prompt": "blurry, low quality",
+  "width": 1024,
+  "height": 1024,
+  "steps": 4,
+  "seed": 42
+}
