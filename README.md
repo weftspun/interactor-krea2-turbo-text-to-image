@@ -7,13 +7,13 @@ packaging convention. Facts from
 
 ## Model
 
-| Property | Value |
-|---|---|
-| Upstream | [krea/Krea-2-Turbo](https://huggingface.co/krea/Krea-2-Raw) (Krea AI), 4 parts: backbone (12.0 B), T5 (4.7 B), CLIP (0.12 B), VAE (0.08 B) |
-| License | **Krea 2 Community License** (custom, not Apache/MIT) — free commercial use requires company-wide annual revenue under $1M **and** fewer than 50 seats; larger orgs need a separate enterprise license. Independently checked against [krea.ai/krea-2-licensing](https://www.krea.ai/krea-2-licensing); this is revenue-gated, not a blanket commercial grant — flagging for whoever owns RFD 0028's license gate to confirm this clears the bar for every deployer, not just weftspun itself. |
-| Parameters | 16.9 B total, published |
-| bf16 | 33.8 GB — largest model in the catalog |
-| Q4_K_M | 9.30 GB — the only ship format, the largest single saving in the catalog |
+| Property   | Value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Upstream   | [krea/Krea-2-Turbo](https://huggingface.co/krea/Krea-2-Raw) (Krea AI), 4 parts: backbone (12.0 B), T5 (4.7 B), CLIP (0.12 B), VAE (0.08 B)                                                                                                                                                                                                                                                                                                                                                     |
+| License    | **Krea 2 Community License** (custom, not Apache/MIT) — free commercial use requires company-wide annual revenue under $1M **and** fewer than 50 seats; larger orgs need a separate enterprise license. Independently checked against [krea.ai/krea-2-licensing](https://www.krea.ai/krea-2-licensing); this is revenue-gated, not a blanket commercial grant — flagging for whoever owns RFD 0028's license gate to confirm this clears the bar for every deployer, not just weftspun itself. |
+| Parameters | 16.9 B total, published                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| bf16       | 33.8 GB — largest model in the catalog                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| Q4_K_M     | 9.30 GB — the only ship format, the largest single saving in the catalog                                                                                                                                                                                                                                                                                                                                                                                                                       |
 
 ## The disk trap (RFD 0042)
 
@@ -37,14 +37,14 @@ parts to the device per stage.
 
 `POST /predict`:
 
-| Input | Type | Default | Note |
-|---|---|---|---|
-| `prompt` | str | required | |
-| `negative_prompt` | str | "" | |
-| `width` | int | 1024 | 256–2048 |
-| `height` | int | 1024 | 256–2048 |
-| `steps` | int | 4 | 1–12; this is the Turbo variant — 30 steps costs 7× and gives no better image |
-| `seed` | int | -1 | |
+| Input             | Type | Default  | Note                                                                          |
+| ----------------- | ---- | -------- | ----------------------------------------------------------------------------- |
+| `prompt`          | str  | required |                                                                               |
+| `negative_prompt` | str  | ""       |                                                                               |
+| `width`           | int  | 1024     | 256–2048                                                                      |
+| `height`          | int  | 1024     | 256–2048                                                                      |
+| `steps`           | int  | 4        | 1–12; this is the Turbo variant — 30 steps costs 7× and gives no better image |
+| `seed`            | int  | -1       |                                                                               |
 
 Returns `{image, seed, stub}`.
 
